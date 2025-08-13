@@ -1,13 +1,13 @@
 const v1 = "Tio Ben";
 const v2 = "redcuerda lo siguiente";
-const v3 = "un gran poder conlleva una gran responsabilidad";
+const v3 = "Un gran poder, conlleva una gran responsabilidad.";
 const v4 = "Ten cuidado con el duende verde";
 
 const spiderman = (peligro) => {
     if(peligro = true){
-        return `como decia el ${v1} ${v2} ${v3}`;
+        return `Como decia el ${v1}, ${v2}: "${v3}"`;
     }else{
-        return `como decia el ${v1} ${v4}`;
+        return `Como decia el ${v1} ${v4}`;
     }
 };
 
@@ -23,3 +23,15 @@ boton.innerText = "Peligro";
 boton2.innerText = "A salvo";
 document.body.appendChild(boton);
 document.body.appendChild(boton2);
+
+
+//enventos en JS con botones
+boton.addEventListener("click",()=>{
+    peligro = false;
+    recordando = spiderman(peligro);
+    //window.location.href = "index.html";
+    document.body.innerHTML=`
+    <h1>${recordando}</h1>
+    <button id='boton2'><a href='index.html'>Volver</a></button>
+    `;
+})
